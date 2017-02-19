@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="hl.applicationcollection.MainActivity">
+    tools:context="hl.applicationcollection.main.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
@@ -41,7 +41,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
         app:layout_anchor="@id/app_bar"
-        app:layout_anchorGravity="bottom|end"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        app:layout_anchorGravity="bottom|end" />
 
 </android.support.design.widget.CoordinatorLayout>
