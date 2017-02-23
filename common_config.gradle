@@ -5,8 +5,8 @@ project.ext {
     javaMaxHeapSize = '4G'
 
     //安卓编译版本
-    compileSdkVersion = 23
-    buildToolsVersion = "23.0.1"
+    compileSdkVersion = 25
+    buildToolsVersion = "25.0.0"
     minSdkVersion = 16
     targetSdkVersion = 23
 
@@ -17,6 +17,10 @@ project.ext {
     //JDK版本兼容
     sourceCompatibility = this.&getJavaVersion()
     targetCompatibility = this.&getJavaVersion()
+
+    supportLibraryVersion = "25.1.0"
+    supportV4 = "25.0.1"
+    supportDesign = "25.0.1"
 }
 
 def getJavaVersion() {
