@@ -8,7 +8,7 @@ package hl.applicationcollection.base;
 public interface IBaseView {
     void showToast();
 
-    void showWaittingDialog();
+    void showWaitingDialog();
 
-    void hideWaittingDialog();
+    void hideWaitingDialog();
 }

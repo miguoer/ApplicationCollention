@@ -1,10 +1,10 @@
 package hl.applicationcollection.base;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,11 +15,11 @@ import butterknife.ButterKnife;
  * 邮箱：1871767675@qq.com
  */
 
-public abstract class BaseFragment<P extends BasePresenterImpl> extends Fragment{
+public abstract class BaseFragment<P extends BasePresenterImpl> extends Fragment {
 
-    protected View mRootView;
+    protected View rootView;
 
-    protected Activity mActivity;
+    protected BaseActivity activity;
 
     protected P presenter;
 
@@ -28,8 +28,8 @@ public abstract class BaseFragment<P extends BasePresenterImpl> extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
        if (bindLayout() != 0) {
-           mRootView = inflater.inflate(bindLayout(),container, false);
-           return mRootView;
+           rootView = inflater.inflate(bindLayout(),container, false);
+           return rootView;
        }else {
            return super.onCreateView(inflater, container, savedInstanceState);
        }
@@ -47,7 +47,7 @@ public abstract class BaseFragment<P extends BasePresenterImpl> extends Fragment
         super.onAttach(context);
         if (context instanceof BaseActivity) {
             BaseActivity activity = (BaseActivity) context;
-            this.mActivity = activity;
+            this.activity = activity;
         }
     }
 
@@ -58,7 +58,7 @@ public abstract class BaseFragment<P extends BasePresenterImpl> extends Fragment
 
     @Override
     public void onDetach() {
-        mActivity = null;
+        activity = null;
         super.onDetach();
     }
 

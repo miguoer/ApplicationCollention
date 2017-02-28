@@ -3,41 +3,33 @@ package hl.applicationcollection.main.view.fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import butterknife.BindView;
 import hl.applicationcollection.R;
 import hl.applicationcollection.base.BaseFragment;
 import hl.applicationcollection.base.IBaseView;
 import hl.applicationcollection.main.presenter.HomePagePresenterImpl;
+import hl.applicationcollection.main.presenter.MyPresenterImpl;
 
 /**
  * A simple {@link BaseFragment} subclass.
- * Use the {@link HomePageFragment#newInstance} factory method to
+ * Use the {@link MyFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomePageFragment extends BaseFragment<HomePagePresenterImpl> implements IBaseView{;
+public class MyFragment extends BaseFragment<MyPresenterImpl> implements IBaseView {
 
-    @BindView(R.id.app_bar)
-    AppBarLayout appBarLayout;
+    public MyFragment() {
+    }
 
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
-
-
-    public HomePageFragment() {}
-
-    public static HomePageFragment newInstance() {
+    public static MyFragment newInstance() {
         return FragmentBuilder.instance;
     }
 
     private static class FragmentBuilder {
-        private static HomePageFragment instance = new HomePageFragment();
+        private static MyFragment instance = new MyFragment();
     }
 
     @Override
@@ -52,7 +44,6 @@ public class HomePageFragment extends BaseFragment<HomePagePresenterImpl> implem
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -64,23 +55,22 @@ public class HomePageFragment extends BaseFragment<HomePagePresenterImpl> implem
     }
 
     @Override
+    protected void initView(View view) {
+
+    }
+
+    @Override
     protected void initData() {
-        activity.setSupportActionBar(toolbar);
     }
 
     @Override
     protected int bindLayout() {
-        return R.layout.fragment_home_page;
+        return R.layout.fragment_my;
     }
 
     @Override
-    protected HomePagePresenterImpl bindPresenter() {
-        return new HomePagePresenterImpl(this);
-    }
-
-    @Override
-    protected void initView(View view) {
-
+    protected MyPresenterImpl bindPresenter() {
+        return new MyPresenterImpl(this);
     }
 
     @Override

@@ -3,46 +3,41 @@ package hl.applicationcollection.main.view.fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import butterknife.BindView;
 import hl.applicationcollection.R;
 import hl.applicationcollection.base.BaseFragment;
 import hl.applicationcollection.base.IBaseView;
-import hl.applicationcollection.main.presenter.HomePagePresenterImpl;
+import hl.applicationcollection.main.presenter.FriendPresenterImpl;
+import hl.applicationcollection.main.presenter.MyPresenterImpl;
 
 /**
  * A simple {@link BaseFragment} subclass.
- * Use the {@link HomePageFragment#newInstance} factory method to
+ * Use the {@link FriendFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomePageFragment extends BaseFragment<HomePagePresenterImpl> implements IBaseView{;
+public class FriendFragment extends BaseFragment<FriendPresenterImpl> implements IBaseView {
 
-    @BindView(R.id.app_bar)
-    AppBarLayout appBarLayout;
+    public FriendFragment() {
+        // Required empty public constructor
+    }
 
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
-
-
-    public HomePageFragment() {}
-
-    public static HomePageFragment newInstance() {
+    public static FriendFragment newInstance() {
         return FragmentBuilder.instance;
     }
 
     private static class FragmentBuilder {
-        private static HomePageFragment instance = new HomePageFragment();
+        private static FriendFragment instance = new FriendFragment();
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+        }
     }
 
     @Override
@@ -51,7 +46,6 @@ public class HomePageFragment extends BaseFragment<HomePagePresenterImpl> implem
         // Inflate the layout for this fragment
         return super.onCreateView(inflater, container, savedInstanceState);
     }
-
 
     @Override
     public void onAttach(Context context) {
@@ -64,23 +58,23 @@ public class HomePageFragment extends BaseFragment<HomePagePresenterImpl> implem
     }
 
     @Override
+    protected void initView(View view) {
+
+    }
+
+    @Override
     protected void initData() {
-        activity.setSupportActionBar(toolbar);
+
     }
 
     @Override
     protected int bindLayout() {
-        return R.layout.fragment_home_page;
+        return R.layout.fragment_friend;
     }
 
     @Override
-    protected HomePagePresenterImpl bindPresenter() {
-        return new HomePagePresenterImpl(this);
-    }
-
-    @Override
-    protected void initView(View view) {
-
+    protected FriendPresenterImpl bindPresenter() {
+        return new FriendPresenterImpl(this);
     }
 
     @Override
@@ -97,4 +91,5 @@ public class HomePageFragment extends BaseFragment<HomePagePresenterImpl> implem
     public void hideWaitingDialog() {
 
     }
+
 }
