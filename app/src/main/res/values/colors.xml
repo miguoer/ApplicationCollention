@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="c1296db">#1296db</color>
+    <color name="c4169e1">#4169e1</color>
     <color name="c707070">#707070</color>
     <color name="cdbdbdb">#dbdbdb</color>
     <color name="ce6e6e6">#e6e6e6</color>
@@ -11,6 +12,7 @@
     <color name="cffffff">#ffffff</color>
     <color name="ccdcdcd">#cdcdcd</color>
     <color name="cbfbfbf">#bfbfbf</color>
+    <color name="c13227a">#13227a</color>
 
 
 </resources>
