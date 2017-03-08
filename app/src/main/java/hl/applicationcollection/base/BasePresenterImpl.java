@@ -1,5 +1,6 @@
 package hl.applicationcollection.base;
 
+import hl.applicationcollection.main.model.data.IMainDataManager;
 import io.reactivex.disposables.CompositeDisposable;
 
 /**
@@ -10,6 +11,7 @@ import io.reactivex.disposables.CompositeDisposable;
 public class BasePresenterImpl<V> implements IBasePresenter<V> {
     public V view;
     protected final CompositeDisposable compositeDisposable = new CompositeDisposable();
+
 
     public BasePresenterImpl() {
     }
@@ -24,6 +26,8 @@ public class BasePresenterImpl<V> implements IBasePresenter<V> {
         compositeDisposable.dispose();
         this.view = null;
     }
+
+
 
 
     public V getView() {

@@ -5,5 +5,5 @@ package hl.applicationcollection.main.model.data.preference;
  * 邮箱：1871767675@qq.com
  */
 
-public class MainPreferenceHelper {
+public class MainPreferenceHelper implements IMainPreferenceHelper{
 }

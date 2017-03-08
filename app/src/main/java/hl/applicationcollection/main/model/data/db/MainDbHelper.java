@@ -5,5 +5,6 @@ package hl.applicationcollection.main.model.data.db;
  * 邮箱：1871767675@qq.com
  */
 
-public class MainDbHelper {
+public class MainDbHelper implements IMainDbHelper{
+
 }

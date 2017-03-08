@@ -5,5 +5,5 @@ package hl.applicationcollection.main.model.data.file;
  * 邮箱：1871767675@qq.com
  */
 
-public class MainFileHelper {
+public class MainFileHelper implements IMainFileHelper{
 }
