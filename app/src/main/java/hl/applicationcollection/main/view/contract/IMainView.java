@@ -1,4 +1,4 @@
-package hl.applicationcollection.main.view.activity.intrf;
+package hl.applicationcollection.main.view.contract;
 
 import hl.applicationcollection.base.IBaseView;
 

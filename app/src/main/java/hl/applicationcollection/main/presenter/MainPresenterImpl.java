@@ -2,7 +2,8 @@ package hl.applicationcollection.main.presenter;
 
 
 import hl.applicationcollection.base.BasePresenterImpl;
-import hl.applicationcollection.main.view.activity.intrf.IMainView;
+import hl.applicationcollection.main.view.contract.IMainView;
+import io.reactivex.disposables.CompositeDisposable;
 
 /**
  * Created by huanglin on 2017/2/19.

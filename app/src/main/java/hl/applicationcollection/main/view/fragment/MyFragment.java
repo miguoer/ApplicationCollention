@@ -13,6 +13,7 @@ import hl.applicationcollection.base.BaseFragment;
 import hl.applicationcollection.base.IBaseView;
 import hl.applicationcollection.main.presenter.HomePagePresenterImpl;
 import hl.applicationcollection.main.presenter.MyPresenterImpl;
+import io.reactivex.disposables.CompositeDisposable;
 
 /**
  * A simple {@link BaseFragment} subclass.

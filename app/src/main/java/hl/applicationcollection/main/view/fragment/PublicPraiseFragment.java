@@ -10,6 +10,7 @@ import hl.applicationcollection.R;
 import hl.applicationcollection.base.BaseFragment;
 import hl.applicationcollection.base.IBaseView;
 import hl.applicationcollection.main.presenter.PublicPraisePresenterImpl;
+import io.reactivex.disposables.CompositeDisposable;
 
 /**
  * Created by huanglin on 2017/2/25.

@@ -6,9 +6,18 @@ package hl.applicationcollection.base;
  */
 
 public interface IBaseView {
+    /**
+     * 弹出提示
+     */
     void showToast();
 
+    /**
+     * 展现等待框
+     */
     void showWaitingDialog();
 
+    /**
+     * 隐藏等待框
+     */
     void hideWaitingDialog();
 }

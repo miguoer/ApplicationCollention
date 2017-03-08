@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 
 import hl.applicationcollection.base.BasePresenterImpl;
 import hl.applicationcollection.base.IBaseView;
+import io.reactivex.disposables.CompositeDisposable;
 
 /**
  * Created by huanglin on 2017/2/26.

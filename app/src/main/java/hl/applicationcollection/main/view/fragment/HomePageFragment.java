@@ -1,20 +1,23 @@
 package hl.applicationcollection.main.view.fragment;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import java.util.List;
 import butterknife.BindView;
+import butterknife.OnClick;
 import hl.applicationcollection.R;
 import hl.applicationcollection.base.BaseFragment;
 import hl.applicationcollection.base.IBaseView;
 import hl.applicationcollection.main.presenter.HomePagePresenterImpl;
+import hl.applicationcollection.main.view.adapter.HomePageRecyclerViewAdapter;
+import io.reactivex.disposables.CompositeDisposable;
+import android.widget.Button;
+
+import com.alibaba.android.arouter.launcher.ARouter;
+
 
 /**
  * A simple {@link BaseFragment} subclass.
@@ -23,11 +26,18 @@ import hl.applicationcollection.main.presenter.HomePagePresenterImpl;
  */
 public class HomePageFragment extends BaseFragment<HomePagePresenterImpl> implements IBaseView{;
 
-    @BindView(R.id.app_bar)
-    AppBarLayout appBarLayout;
+//    @BindView(R.id.app_bar)
+//    AppBarLayout appBarLayout;
+//
+//    @BindView(R.id.toolbar)
+//    Toolbar toolbar;
 
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
+    @BindView(R.id.btnGoToGankModule)
+    Button btnGoToGankModule;
+
+    private List<String> pluginsData;
+
+    private HomePageRecyclerViewAdapter homePageRecyclerViewAdapter;
 
 
     public HomePageFragment() {}
@@ -65,7 +75,8 @@ public class HomePageFragment extends BaseFragment<HomePagePresenterImpl> implem
 
     @Override
     protected void initData() {
-        activity.setSupportActionBar(toolbar);
+//        activity.setSupportActionBar(toolbar);
+        presenter.loadData();
     }
 
     @Override
@@ -83,6 +94,11 @@ public class HomePageFragment extends BaseFragment<HomePagePresenterImpl> implem
 
     }
 
+    @OnClick(R.id.btnGoToGankModule)
+    public void goToGankModule(){
+        ARouter.getInstance().build("/gank/gankMainActivity").navigation(activity);
+    }
+
     @Override
     public void showToast() {
 
@@ -90,6 +106,7 @@ public class HomePageFragment extends BaseFragment<HomePagePresenterImpl> implem
 
     @Override
     public void showWaitingDialog() {
+
 
     }
 

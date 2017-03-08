@@ -1,5 +1,7 @@
 package hl.applicationcollection.base;
 
+import io.reactivex.disposables.CompositeDisposable;
+
 /**
  * Created by huanglin on 2017/2/19.
  * 邮箱：1871767675@qq.com
@@ -7,7 +9,10 @@ package hl.applicationcollection.base;
 
 public class BasePresenterImpl<V> implements IBasePresenter<V> {
     public V view;
+    protected final CompositeDisposable compositeDisposable = new CompositeDisposable();
 
+    public BasePresenterImpl() {
+    }
 
     @Override
     public void attachView(V view) {
@@ -16,6 +21,7 @@ public class BasePresenterImpl<V> implements IBasePresenter<V> {
 
     @Override
     public void detachView() {
+        compositeDisposable.dispose();
         this.view = null;
     }
 
@@ -36,6 +42,10 @@ public class BasePresenterImpl<V> implements IBasePresenter<V> {
     @Override
     public void unSubscribe() {
 
+    }
+
+    public CompositeDisposable getCompositeDisposable() {
+        return compositeDisposable;
     }
 
 

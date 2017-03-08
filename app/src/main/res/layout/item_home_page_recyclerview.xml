@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <ImageView
+        android:id="@+id/ivItemHomePageRecyclerViewAdapter"
+        android:layout_width="@dimen/dimen50"
+        android:layout_height="@dimen/dimen50"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/icon_my_select"
+        android:scaleType="centerCrop"/>
+    <TextView
+        android:layout_below="@id/ivItemHomePageRecyclerViewAdapter"
+        android:id="@+id/tvItemHomePageRecyclerViewAdapter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="全部"/>
+
+
+</RelativeLayout>

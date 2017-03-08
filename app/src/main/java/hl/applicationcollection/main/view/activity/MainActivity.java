@@ -1,6 +1,5 @@
 package hl.applicationcollection.main.view.activity;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -11,13 +10,14 @@ import butterknife.BindView;
 import hl.applicationcollection.R;
 import hl.applicationcollection.base.BaseActivity;
 import hl.applicationcollection.main.presenter.MainPresenterImpl;
-import hl.applicationcollection.main.view.activity.intrf.IMainView;
+import hl.applicationcollection.main.view.contract.IMainView;
 import hl.applicationcollection.main.view.adapter.ViewPagerAdapter;
 import hl.applicationcollection.main.view.fragment.FriendFragment;
 import hl.applicationcollection.main.view.fragment.HomePageFragment;
 import hl.applicationcollection.main.view.fragment.MyFragment;
 import hl.applicationcollection.main.view.fragment.PublicPraiseFragment;
 import hl.applicationcollection.utils.BottomNavigationViewHelper;
+import io.reactivex.disposables.CompositeDisposable;
 
 public class MainActivity extends BaseActivity<MainPresenterImpl> implements IMainView{
 

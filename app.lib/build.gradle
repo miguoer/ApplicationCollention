@@ -11,14 +11,18 @@ android {
         targetSdkVersion project.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
     }
     buildTypes {
         release {
             minifyEnabled project.ext.minifyEnable
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
         }
     }
 }
@@ -35,13 +39,13 @@ dependencies {
     compile 'org.greenrobot:greendao:3.2.0'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'io.reactivex.rxjava2:rxjava:2.0.1'
-
-    compile 'com.jakewharton:butterknife:8.5.1'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.orhanobut:logger:1.15'
-
     compile 'com.android.support:recyclerview-v7:23.0.1'
     compile 'com.bm.photoview:library:1.4.0'
-
-
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.marshalchen.ultimaterecyclerview:library:0.7.2'
+    compile 'com.alibaba:arouter-api:1.0.7'
+    compile 'com.alibaba:arouter-annotation:1.0.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.0.3'
 }

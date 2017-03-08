@@ -11,7 +11,7 @@ project.ext {
     targetSdkVersion = 23
 
     //混淆相关
-    minifyEnable = true
+    minifyEnable = false
     shrinkResEnable = false
 
     //JDK版本兼容
