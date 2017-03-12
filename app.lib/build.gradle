@@ -48,4 +48,7 @@ dependencies {
     compile 'com.alibaba:arouter-api:1.0.7'
     compile 'com.alibaba:arouter-annotation:1.0.1'
     annotationProcessor 'com.alibaba:arouter-compiler:1.0.3'
+    compile 'com.orhanobut:logger:1.15'
+    compile 'com.umeng.analytics:analytics:6.0.9'
+
 }

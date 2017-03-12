@@ -10,6 +10,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.umeng.analytics.MobclickAgent;
+
 import butterknife.ButterKnife;
 import hl.applicationcollection.R;
 
@@ -53,5 +55,18 @@ public abstract class BaseActivity<P extends BasePresenterImpl> extends AppCompa
         if (presenter != null) {
             presenter.detachView();
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 }
