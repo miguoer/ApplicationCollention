@@ -10,7 +10,4 @@ public interface IBasePresenter<V> {
 
     void detachView();
 
-    void subscribe();
-
-    void unSubscribe();
 }

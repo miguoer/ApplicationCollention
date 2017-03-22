@@ -108,8 +108,6 @@ public class MainActivity extends BaseActivity<MainPresenterImpl> implements IMa
         return new MainPresenterImpl(this);
     }
 
-
-
     @Override
     public void showToast() {
 

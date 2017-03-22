@@ -38,15 +38,6 @@ public class BasePresenterImpl<V> implements IBasePresenter<V> {
         return view != null;
     }
 
-    @Override
-    public void subscribe() {
-
-    }
-
-    @Override
-    public void unSubscribe() {
-
-    }
 
     public CompositeDisposable getCompositeDisposable() {
         return compositeDisposable;

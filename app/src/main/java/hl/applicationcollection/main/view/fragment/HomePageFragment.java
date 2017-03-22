@@ -2,6 +2,8 @@ package hl.applicationcollection.main.view.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,11 +28,11 @@ import com.alibaba.android.arouter.launcher.ARouter;
  */
 public class HomePageFragment extends BaseFragment<HomePagePresenterImpl> implements IBaseView{;
 
-//    @BindView(R.id.app_bar)
-//    AppBarLayout appBarLayout;
-//
-//    @BindView(R.id.toolbar)
-//    Toolbar toolbar;
+    @BindView(R.id.app_bar)
+    AppBarLayout appBarLayout;
+
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
     @BindView(R.id.btnGoToGankModule)
     Button btnGoToGankModule;
@@ -75,7 +77,7 @@ public class HomePageFragment extends BaseFragment<HomePagePresenterImpl> implem
 
     @Override
     protected void initData() {
-//        activity.setSupportActionBar(toolbar);
+        activity.setSupportActionBar(toolbar);
         presenter.loadData();
     }
 

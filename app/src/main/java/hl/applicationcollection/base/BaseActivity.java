@@ -10,9 +10,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.squareup.leakcanary.RefWatcher;
 import com.umeng.analytics.MobclickAgent;
 
 import butterknife.ButterKnife;
+import hl.applicationcollection.MyApplication;
 import hl.applicationcollection.R;
 
 public abstract class BaseActivity<P extends BasePresenterImpl> extends AppCompatActivity {
@@ -52,6 +54,9 @@ public abstract class BaseActivity<P extends BasePresenterImpl> extends AppCompa
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        //销毁Activity时，检测内存泄露
+        RefWatcher refWatcher = MyApplication.getRefWatcher(this);
+        refWatcher.watch(this);
         if (presenter != null) {
             presenter.detachView();
         }
@@ -61,7 +66,6 @@ public abstract class BaseActivity<P extends BasePresenterImpl> extends AppCompa
     protected void onResume() {
         super.onResume();
         MobclickAgent.onResume(this);
-
     }
 
     @Override
