@@ -1,5 +1,7 @@
 package hl.applicationcollection.main.presenter;
 
+import android.util.Log;
+
 import hl.applicationcollection.base.BasePresenterImpl;
 import hl.applicationcollection.base.IBaseView;
 import hl.applicationcollection.main.model.NewsModel;
@@ -35,7 +37,7 @@ public class HomePagePresenterImpl extends BasePresenterImpl<IBaseView> {
                 .subscribe(new Consumer<NewsModel>() {
                     @Override
                     public void accept(NewsModel newsModel) throws Exception {
-
+                        Log.e("accetp", "llll")   ;
                     }
                 }, new Consumer<Throwable>() {
                     @Override

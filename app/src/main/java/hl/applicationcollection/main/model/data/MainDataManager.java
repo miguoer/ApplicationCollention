@@ -61,8 +61,7 @@ public class MainDataManager implements IMainDataManager{
 
     @Override
     public Observable<NewsModel> getNews(@Path("channels_id") int channels_id) {
-
-        return null;
+        return mainApiHelper.getNews(channels_id);
     }
 
 

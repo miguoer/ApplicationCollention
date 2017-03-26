@@ -11,8 +11,11 @@ import retrofit2.http.Path;
  */
 
 public class MainApiHelper implements IMainApiHelper {
+    public static final String BAOZOU = "http://dailyapi.ibaozou.com";
+
+
     @Override
     public Observable<NewsModel> getNews(@Path("channels_id") int channels_id) {
-        return null;
+        return  ApiClient.getRetrofit(BAOZOU).create(ApiService.class).getNews(channels_id);
     }
 }

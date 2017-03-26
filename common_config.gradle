@@ -2,11 +2,11 @@ project.ext {
 
     //java相关
     javaVersion = 8
-    javaMaxHeapSize = '4G'
+    javaMaxHeapSize = '1G'
 
     //安卓编译版本
     compileSdkVersion = 25
-    buildToolsVersion = "25.0.0"
+    buildToolsVersion = "25.0.2"
     minSdkVersion = 16
     targetSdkVersion = 23
 
@@ -19,7 +19,7 @@ project.ext {
     targetCompatibility = this.&getJavaVersion()
 
     supportLibraryVersion = "25.1.0"
-    supportV4 = "25.0.1"
+    supportV4 = "25.0.2"
     supportDesign = "25.0.1"
 }
 
