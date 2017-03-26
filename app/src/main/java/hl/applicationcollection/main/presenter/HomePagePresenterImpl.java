@@ -2,12 +2,13 @@ package hl.applicationcollection.main.presenter;
 
 import android.util.Log;
 
+import com.orhanobut.logger.Logger;
+
 import hl.applicationcollection.base.BasePresenterImpl;
 import hl.applicationcollection.base.IBaseView;
 import hl.applicationcollection.main.model.NewsModel;
-import hl.applicationcollection.main.model.data.MainDataManager;
+import hl.applicationcollection.data.AppDataManager;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
@@ -17,8 +18,6 @@ import io.reactivex.schedulers.Schedulers;
  */
 
 public class HomePagePresenterImpl extends BasePresenterImpl<IBaseView> {
-
-
 
     public HomePagePresenterImpl(IBaseView iBaseView) {
         attachView(iBaseView);
@@ -31,13 +30,13 @@ public class HomePagePresenterImpl extends BasePresenterImpl<IBaseView> {
     public void loadData() {
         view.showWaitingDialog();
 
-        getCompositeDisposable().add(MainDataManager.getInstance().getNews(1)
+        getCompositeDisposable().add(AppDataManager.getInstance().getNews(1)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<NewsModel>() {
                     @Override
                     public void accept(NewsModel newsModel) throws Exception {
-                        Log.e("accetp", "llll")   ;
+                        Logger.e("accept", "llll");
                     }
                 }, new Consumer<Throwable>() {
                     @Override

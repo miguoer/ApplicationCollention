@@ -37,6 +37,8 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
     compile 'com.squareup.retrofit2:converter-gson:2.2.0'
     compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+
     compile 'org.greenrobot:greendao:3.2.0'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'io.reactivex.rxjava2:rxjava:2.0.1'
@@ -51,5 +53,10 @@ dependencies {
     annotationProcessor 'com.alibaba:arouter-compiler:1.0.3'
     compile 'com.orhanobut:logger:1.15'
     compile 'com.umeng.analytics:analytics:6.0.9'
+
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    compile 'com.jakewharton.rxrelay2:rxrelay:2.0.0'
 
 }

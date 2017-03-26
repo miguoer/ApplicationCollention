@@ -1,4 +1,4 @@
-package hl.applicationcollection.main.model.data.network;
+package hl.applicationcollection.data.network;
 
 
 import hl.applicationcollection.main.model.NewsModel;
@@ -10,7 +10,7 @@ import retrofit2.http.Path;
  * 邮箱：1871767675@qq.com
  */
 
-public class MainApiHelper implements IMainApiHelper {
+public class AppApiHelper implements IAppApiHelper {
     public static final String BAOZOU = "http://dailyapi.ibaozou.com";
 
 

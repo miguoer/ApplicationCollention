@@ -1,6 +1,5 @@
 package hl.applicationcollection.base;
 
-import hl.applicationcollection.main.model.data.IMainDataManager;
 import io.reactivex.disposables.CompositeDisposable;
 
 /**

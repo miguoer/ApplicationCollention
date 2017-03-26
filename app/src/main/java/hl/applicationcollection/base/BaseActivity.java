@@ -16,6 +16,7 @@ import com.umeng.analytics.MobclickAgent;
 import butterknife.ButterKnife;
 import hl.applicationcollection.MyApplication;
 import hl.applicationcollection.R;
+import hl.applicationcollection.utils.ActivityManager;
 
 public abstract class BaseActivity<P extends BasePresenterImpl> extends AppCompatActivity {
     public final static String TAG = BaseActivity.class.getCanonicalName();//getCanonicalName()可返回完整包名信息，方便定位
@@ -24,6 +25,7 @@ public abstract class BaseActivity<P extends BasePresenterImpl> extends AppCompa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActivityManager.getInstance().addActivity(this);
         presenter = bindPresenter();
         setContentView(bindLayout());
         ButterKnife.bind(this);
