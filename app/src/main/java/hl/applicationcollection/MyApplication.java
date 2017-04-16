@@ -5,11 +5,15 @@ import android.content.Context;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.spinytech.macore.MaApplication;
+import com.spinytech.macore.router.WideRouter;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
 import app.lib.CrashHandler;
 import hl.applicationcollection.router.MainApplicationLogic;
+import hl.applicationcollection.router.MainRouterConnectService;
+import hl.appmusic.router.MusicApplicationLogic;
+import hl.appmusic.router.MusicRouterConnectService;
 
 /**
  * Created by huanglin on 2017/2/17.
@@ -43,7 +47,8 @@ public class MyApplication extends MaApplication {
      */
     @Override
     public void initializeAllProcessRouter() {
-
+        WideRouter.registerLocalRouter("hl.applicationcollection",MainRouterConnectService.class);
+        WideRouter.registerLocalRouter("hl.applicationcollection:music",MusicRouterConnectService.class);
     }
 
     /**
@@ -53,6 +58,8 @@ public class MyApplication extends MaApplication {
     protected void initializeLogic() {
         //第一个参数表示进程名，第二个表示初始化优先级，第三个是对应的Application逻辑类，在需要的时候会反射初始化
         registerApplicationLogic("hl.applicationcollection",999, MainApplicationLogic.class);
+        registerApplicationLogic("hl.applicationcollection:music",999, MusicApplicationLogic.class);
+
     }
 
     /**
@@ -61,7 +68,7 @@ public class MyApplication extends MaApplication {
      */
     @Override
     public boolean needMultipleProcess() {
-        return false;
+        return true;
     }
 
     /**

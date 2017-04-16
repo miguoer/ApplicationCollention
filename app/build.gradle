@@ -40,6 +40,7 @@ dependencies {
 
     if (!IsBuildModule.toBoolean()) {
         compile project(':app.gank')
+        compile project(':app.music')
     } else {
     }
 }

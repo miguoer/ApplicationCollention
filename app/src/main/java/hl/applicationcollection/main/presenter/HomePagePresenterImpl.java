@@ -3,6 +3,10 @@ package hl.applicationcollection.main.presenter;
 import android.util.Log;
 
 import com.orhanobut.logger.Logger;
+import com.spinytech.macore.MaApplication;
+import com.spinytech.macore.router.LocalRouter;
+import com.spinytech.macore.router.RouterRequest;
+import com.spinytech.macore.router.RouterResponse;
 
 import hl.applicationcollection.base.BasePresenterImpl;
 import hl.applicationcollection.base.IBaseView;
@@ -45,8 +49,12 @@ public class HomePagePresenterImpl extends BasePresenterImpl<IBaseView> {
                     }
                 })
         );
+    }
 
-
+    /**
+     * 播放音乐
+     */
+    public void playMusic() {
 
     }
 }

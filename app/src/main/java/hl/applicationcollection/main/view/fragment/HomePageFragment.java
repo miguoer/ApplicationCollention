@@ -7,18 +7,25 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.spinytech.macore.MaApplication;
+import com.spinytech.macore.router.LocalRouter;
+import com.spinytech.macore.router.RouterRequest;
+import com.spinytech.macore.router.RouterResponse;
+
 import java.util.List;
+
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 import hl.applicationcollection.R;
 import hl.applicationcollection.base.BaseFragment;
 import hl.applicationcollection.base.IBaseView;
 import hl.applicationcollection.main.presenter.HomePagePresenterImpl;
 import hl.applicationcollection.main.view.adapter.HomePageRecyclerViewAdapter;
-import io.reactivex.disposables.CompositeDisposable;
-import android.widget.Button;
-
-import com.alibaba.android.arouter.launcher.ARouter;
 
 
 /**
@@ -26,7 +33,8 @@ import com.alibaba.android.arouter.launcher.ARouter;
  * Use the {@link HomePageFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomePageFragment extends BaseFragment<HomePagePresenterImpl> implements IBaseView{;
+public class HomePageFragment extends BaseFragment<HomePagePresenterImpl> implements IBaseView {
+    ;
 
     @BindView(R.id.app_bar)
     AppBarLayout appBarLayout;
@@ -36,16 +44,45 @@ public class HomePageFragment extends BaseFragment<HomePagePresenterImpl> implem
 
     @BindView(R.id.btnGoToGankModule)
     Button btnGoToGankModule;
+    @BindView(R.id.btnPlayMusic)
+    Button btnPlayMusic;
 
     private List<String> pluginsData;
 
     private HomePageRecyclerViewAdapter homePageRecyclerViewAdapter;
 
 
-    public HomePageFragment() {}
+    public HomePageFragment() {
+    }
 
     public static HomePageFragment newInstance() {
         return FragmentBuilder.instance;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+    }
+
+    @OnClick(R.id.btnPlayMusic)
+    public void playMusic() {
+//        presenter.playMusic();
+        final RouterRequest request = new RouterRequest.Builder(getActivity().getApplicationContext())
+                .domain("hl.applicationcollection:music")
+                .provider("music")
+                .action("play")
+                .build();
+        try {
+
+            final RouterResponse response = LocalRouter.getInstance(MaApplication.getMaApplication())
+                    .route(getContext(), RouterRequest.obtain(getContext())
+                            .domain("hl.applicationcollection:music")
+                            .provider("music")
+                            .action("play"));
+            response.isAsync();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private static class FragmentBuilder {
@@ -78,7 +115,7 @@ public class HomePageFragment extends BaseFragment<HomePagePresenterImpl> implem
     @Override
     protected void initData() {
         activity.setSupportActionBar(toolbar);
-        presenter.loadData();
+//        presenter.loadData();
     }
 
     @Override
@@ -97,7 +134,7 @@ public class HomePageFragment extends BaseFragment<HomePagePresenterImpl> implem
     }
 
     @OnClick(R.id.btnGoToGankModule)
-    public void goToGankModule(){
+    public void goToGankModule() {
         ARouter.getInstance().build("/gank/gankMainActivity").navigation(activity);
     }
 
