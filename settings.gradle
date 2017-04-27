@@ -1,1 +1,1 @@
-include ':app', ':app.lib', ':app.gank'
+include ':app', ':app.lib', ':app.gank', ':app.music'
