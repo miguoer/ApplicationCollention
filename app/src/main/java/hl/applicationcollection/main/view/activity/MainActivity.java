@@ -108,19 +108,5 @@ public class MainActivity extends BaseActivity<MainPresenterImpl> implements IMa
         return new MainPresenterImpl(this);
     }
 
-    @Override
-    public void showToast() {
-
-    }
-
-    @Override
-    public void showWaitingDialog() {
-
-    }
-
-    @Override
-    public void hideWaitingDialog() {
-
-    }
 
 }

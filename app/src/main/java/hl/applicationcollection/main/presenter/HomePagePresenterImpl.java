@@ -25,7 +25,6 @@ public class HomePagePresenterImpl extends BasePresenterImpl<IBaseView> {
 
     public HomePagePresenterImpl(IBaseView iBaseView) {
         attachView(iBaseView);
-
     }
 
     /**

@@ -1,22 +1,17 @@
-package hl.applicationcollection.base;
+package com.hl.appwebview.base;
 
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.hl.appwebview.R;
 import com.squareup.leakcanary.RefWatcher;
 import com.umeng.analytics.MobclickAgent;
 
+import app.lib.utils.ActivityManager;
 import butterknife.ButterKnife;
-import hl.applicationcollection.MyApplication;
-import hl.applicationcollection.R;
-import hl.applicationcollection.utils.ActivityManager;
 
 public abstract class BaseActivity<P extends BasePresenterImpl> extends AppCompatActivity implements IBaseView{
     public final static String TAG = BaseActivity.class.getCanonicalName();//getCanonicalName()可返回完整包名信息，方便定位
@@ -56,9 +51,6 @@ public abstract class BaseActivity<P extends BasePresenterImpl> extends AppCompa
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        //销毁Activity时，检测内存泄露
-        RefWatcher refWatcher = MyApplication.getRefWatcher(this);
-        refWatcher.watch(this);
         if (presenter != null) {
             presenter.detachView();
         }

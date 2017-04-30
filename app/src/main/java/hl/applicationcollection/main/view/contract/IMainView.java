@@ -7,7 +7,7 @@ import hl.applicationcollection.base.IBaseView;
  * 邮箱：1871767675@qq.com
  */
 
-public interface IMainView extends IBaseView{
+public interface IMainView{
 
 
 }

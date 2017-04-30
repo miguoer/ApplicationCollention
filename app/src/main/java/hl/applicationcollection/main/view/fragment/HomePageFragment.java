@@ -33,7 +33,7 @@ import hl.applicationcollection.main.view.adapter.HomePageRecyclerViewAdapter;
  * Use the {@link HomePageFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomePageFragment extends BaseFragment<HomePagePresenterImpl> implements IBaseView {
+public class HomePageFragment extends BaseFragment<HomePagePresenterImpl>  {
     ;
 
     @BindView(R.id.app_bar)
@@ -136,21 +136,5 @@ public class HomePageFragment extends BaseFragment<HomePagePresenterImpl> implem
     @OnClick(R.id.btnGoToGankModule)
     public void goToGankModule() {
         ARouter.getInstance().build("/gank/gankMainActivity").navigation(activity);
-    }
-
-    @Override
-    public void showToast() {
-
-    }
-
-    @Override
-    public void showWaitingDialog() {
-
-
-    }
-
-    @Override
-    public void hideWaitingDialog() {
-
     }
 }

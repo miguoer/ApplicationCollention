@@ -1,6 +1,5 @@
-package hl.applicationcollection.base;
+package com.hl.appwebview.base;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,7 +11,6 @@ import android.view.ViewGroup;
 import com.squareup.leakcanary.RefWatcher;
 
 import butterknife.ButterKnife;
-import hl.applicationcollection.MyApplication;
 
 /**
  * Created by huanglin on 2017/2/19.
@@ -76,8 +74,6 @@ public abstract class BaseFragment<P extends BasePresenterImpl> extends Fragment
     @Override
     public void onDestroy() {
         super.onDestroy();
-        RefWatcher refWatcher = MyApplication.getRefWatcher(getActivity());
-        refWatcher.watch(this);
     }
 
     protected abstract void initView(View view);
