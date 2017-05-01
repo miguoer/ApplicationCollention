@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">app.webview</string>
+    <string name="app_webview_open_baidu">打开百度</string>
 </resources>

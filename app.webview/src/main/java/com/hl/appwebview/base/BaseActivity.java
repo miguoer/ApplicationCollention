@@ -7,10 +7,6 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.hl.appwebview.R;
-import com.squareup.leakcanary.RefWatcher;
-import com.umeng.analytics.MobclickAgent;
-
-import app.lib.utils.ActivityManager;
 import butterknife.ButterKnife;
 
 public abstract class BaseActivity<P extends BasePresenterImpl> extends AppCompatActivity implements IBaseView{
@@ -20,11 +16,10 @@ public abstract class BaseActivity<P extends BasePresenterImpl> extends AppCompa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityManager.getInstance().addActivity(this);
-        presenter = bindPresenter();
         setContentView(bindLayout());
+        presenter = bindPresenter();
         ButterKnife.bind(this);
-        setStatusBar();
+//        setStatusBar();
         initData();
     }
 
@@ -59,13 +54,11 @@ public abstract class BaseActivity<P extends BasePresenterImpl> extends AppCompa
     @Override
     protected void onResume() {
         super.onResume();
-        MobclickAgent.onResume(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        MobclickAgent.onPause(this);
     }
 
     @Override
