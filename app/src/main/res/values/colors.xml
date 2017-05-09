@@ -3,6 +3,13 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+
+
+    <color name="color_text">#e6e6e6</color>
+    <color name="color_divider">#8a8a8a</color>
+
+
     <color name="c1296db">#1296db</color>
     <color name="c4169e1">#4169e1</color>
     <color name="c707070">#707070</color>
